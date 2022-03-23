@@ -16,5 +16,25 @@
       <description>How to install gurobi python and get academic licence (Windows) Install gurobi &amp;amp; get license 1.</description>
     </item>
     
+    <item>
+      <title>Reading Note: Telling birds from airplanes - Learning from images</title>
+      <link>https://hicbcb.github.io/blog/learning-from-images/</link>
+      <pubDate>Wed, 24 Mar 2021 22:08:55 +0800</pubDate>
+      
+      <guid>https://hicbcb.github.io/blog/learning-from-images/</guid>
+      <description>credit:　Deep Learning with Pytorch
+ch 7 - Telling birds from airplanes:Learning from images 這章幾個focus的重點:</description>
+    </item>
+    
+    <item>
+      <title>Learning Note: Computer Graphic - basic structure and OpenFrameworks</title>
+      <link>https://hicbcb.github.io/blog/cg_basic/</link>
+      <pubDate>Fri, 15 Jan 2021 15:22:00 +0800</pubDate>
+      
+      <guid>https://hicbcb.github.io/blog/cg_basic/</guid>
+      <description>圖學筆記 - 基本名詞與openFramework結構 credit:　Mastering Openframeworks (e-BOOK)
+任何影像形成須包含兩種基本實體:物件(object) &amp;amp; 觀察者(也是相機擺放位置, camera)</description>
+    </item>
+    
   </channel>
 </rss>

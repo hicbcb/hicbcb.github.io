@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Learning Note on Leona&#39;s website</title>
+    <link>https://hicbcb.github.io/categories/learning-note/</link>
+    <description>Recent content in Learning Note on Leona&#39;s website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Fri, 15 Jan 2021 15:22:00 +0800</lastBuildDate><atom:link href="https://hicbcb.github.io/categories/learning-note/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Learning Note: Computer Graphic - basic structure and OpenFrameworks</title>
+      <link>https://hicbcb.github.io/blog/cg_basic/</link>
+      <pubDate>Fri, 15 Jan 2021 15:22:00 +0800</pubDate>
+      
+      <guid>https://hicbcb.github.io/blog/cg_basic/</guid>
+      <description>圖學筆記 - 基本名詞與openFramework結構 credit:　Mastering Openframeworks (e-BOOK)
+任何影像形成須包含兩種基本實體:物件(object) &amp;amp; 觀察者(也是相機擺放位置, camera)</description>
+    </item>
+    
+  </channel>
+</rss>

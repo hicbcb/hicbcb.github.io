@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="zh-tw"><head>
+  <meta charset="utf-8">
+  <title>Leona&#39;s website</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Reading note about a chapter (Ch7) of *Deep Learning with Pytorch*.">
+  <meta name="author" content="Leona">
+  <meta name="generator" content="Hugo 0.95.0" />
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://hicbcb.github.io/plugins/bootstrap/bootstrap.min.css ">
+  
+  <link rel="stylesheet" href="https://hicbcb.github.io/plugins/slick/slick.css ">
+  
+  <link rel="stylesheet" href="https://hicbcb.github.io/plugins/themify-icons/themify-icons.css ">
+  
+  <link rel="stylesheet" href="https://hicbcb.github.io/plugins/venobox/venobox.css ">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://hicbcb.github.io/scss/style.min.css" media="screen">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="https://hicbcb.github.io/images/favicon.png " type="image/x-icon">
+  <link rel="icon" href="https://hicbcb.github.io/images/favicon.png " type="image/x-icon">
+
+  <!-- google analitycs -->
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'Your ID', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+</head><body>
+<!-- preloader start -->
+<div class="preloader">
+  
+</div>
+<!-- preloader end -->
+<!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-white bg-transparent border-bottom pl-0">
+      <a class="navbar-brand mobile-view" href="https://hicbcb.github.io"><img class="img-fluid"
+          src="https://hicbcb.github.io/images/Leona1.png" alt="Leona&#39;s website"></a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        <div class="desktop-view">
+          <ul class="navbar-nav mr-auto">
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.facebook.com/hicbcb/"><i class="ti-facebook"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.instagram.com/tuxedo_batcat/"><i class="ti-instagram"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/hicbcb"><i class="ti-github"></i></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="ti-linkedin"></i></a>
+            </li>
+            
+          </ul>
+        </div>
+
+        <a class="navbar-brand mx-auto desktop-view" href="https://hicbcb.github.io"><img class="img-fluid"
+            src="https://hicbcb.github.io/images/Leona1.png" alt="Leona&#39;s website"></a>
+
+        <ul class="navbar-nav">
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://hicbcb.github.io/about/">About</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://hicbcb.github.io/blog/">Post</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://hicbcb.github.io/contact/">Contact</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        <!-- search -->
+        <div class="search pl-lg-4">
+          <button id="searchOpen" class="search-btn"><i class="ti-search"></i></button>
+          <div class="search-wrapper">
+            <form action="https://hicbcb.github.io/search" class="h-100">
+              <input class="search-box px-4" id="search-query" name="s" type="search" placeholder="Type & Hit Enter...">
+            </form>
+            <button id="searchClose" class="search-close"><i class="ti-close text-dark"></i></button>
+          </div>
+        </div>
+        
+
+        
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+
+<section class="section-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        
+        <a href="/categories/reading-note"
+          class="text-primary">Reading note</a>
+        
+        <h2>Reading Note: Telling birds from airplanes - Learning from images</h2>
+        <div class="mb-3 post-meta">
+          <span>By Leona</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>24 March 2021</span>
+          
+        </div>
+        
+        <img src="https://hicbcb.github.io/images/post/maomao2.jpg" class="img-fluid w-100 mb-4" alt="Reading Note: Telling birds from airplanes - Learning from images">
+        
+        <div class="content mb-5">
+          <p>credit:　Deep Learning with Pytorch</p>
+<h1 id="ch-7---telling-birds-from-airplaneslearning-from-images">ch 7 - Telling birds from airplanes:Learning from images</h1>
+<p>這章幾個focus的重點:</p>
+<ol>
+<li>建立前饋神經網絡</li>
+<li>使用Datasets和DataLoaders加載資料</li>
+<li>了解分類損失</li>
+</ol>
+<hr>
+<p>第六章提到了通過&quot;<strong>梯度下降</strong>&ldquo;深入學習的內部機制，還有PyTorch提供的用於構建模型和優化模型的工具。
+為此，這裡使用了一個只有<strong>一個輸入</strong>和<strong>一個輸出</strong>的<em>簡單回歸模型</em>，能夠一目了然
+<del>(但這只是borderline exciting(???))</del></p>
+<ul>
+<li>
+<p>繼續建立神經網絡基礎</p>
+</li>
+<li>
+<p>將注意力轉移到圖像上(圖像識別)</p>
+</li>
+<li>
+<p>通過一個簡單的神經網絡（如上一章中定義的）逐步解決一個簡單的圖像識別問題</p>
+</li>
+<li>
+<p>使用更廣泛的<strong>微小圖像資料集(A dataset of tiny images)</strong> (不是微小的數字資料集)</p>
+</li>
+</ul>
+<hr>
+<h2 id="7-1--a-dataset-of-tiny-images">7-1  A dataset of tiny images</h2>
+<p><strong>圖像識別</strong>的最基本的dataset之一：<strong>MNIST</strong>(手寫數字識別資料集)
+先下載這章需要的資料集準備使用: <strong>CIFAR-10</strong> (和它的同級CIFAR-100一樣，已成為十年來Computer Vision的經典之作)</p>
+<h4 id="cifar-10">CIFAR-10</h4>
+<p><img src="https://i.imgur.com/5Os271l.png" alt=""></p>
+<h6 id="image-samples-from-all-cifar-10-classes">Image samples from all CIFAR-10 classes</h6>
+<p>對應的分類標記：飛機（0），汽車（1），鳥（2），貓（3），鹿（4），狗（5），青蛙（6），馬（7），輪船（8）和卡車（9）。</p>
+<p>CIFAR-10有60,000個微小的32×32色（RGB）圖像</p>
+<p>如今CIFAR-10被認為<strong>過於簡單</strong>，<strong>無法開發或驗證新研究</strong></p>
+<p>但它可以很好地滿足<strong>學習目的</strong></p>
+<hr>
+<ol>
+<li>使用該<code>torchvision</code>模塊自動下載資料集</li>
+<li>將其加載為PyTorch Tensor的集合</li>
+</ol>
+<hr>
+<h3 id="1----下載cifar-10資料集">1 &ndash; 下載CIFAR-10資料集</h3>
+<pre tabindex="0"><code class="language-python=" data-lang="python="># s = &#34;python syntax highlighting&#34;
+
+from torchvision import datasets
+# 導入torchvision模組中的 datasets
+
+data_path = &#39;../data-unversioned/p1ch7/&#39;
+# 下載資料的位置路徑
+
+
+cifar10 = datasets.CIFAR10(data_path, train=True, download=True)
+# 實例化資料集 (給training data用)
+# 如果資料不存在，用TorchVision下載
+
+cifar10_val = datasets.CIFAR10(data_path, train=False, download=True)
+#  當train=False,這段再次下載資料，但這次是給**驗證資料集**用 
+#  (再次的下載資料集是必要的)
+
+# 第一個參數: 下載資料的位置(data_path)
+# 第二個參數: 指定我們對訓練集還是驗證集感興趣
+# 第三個參數: 如果在第一個參數指定的位置找不到資料，是否允許PyTorch下載資料。
+</code></pre><hr>
+<p>cifar10實例的方法解析順序將其作為基類包括在內：</p>
+<pre tabindex="0"><code class="language-python=" data-lang="python="># In[4]:
+type(cifar10).__mro__
+</code></pre><h5 id="datasets子模塊提供固定的最受歡迎的cv資料集"><code>datasets</code>子模塊提供固定的最受歡迎的CV資料集。</h5>
+<p>( 例如:MNIST, Fashion-MNIST, CIFAR-100, SVHN, Coco, Omniglot&hellip;)</p>
+<pre tabindex="0"><code class="language-python=" data-lang="python="># Out[4]:
+(torchvision.datasets.cifar.CIFAR10,
+ torchvision.datasets.vision.VisionDataset,
+ torch.utils.data.dataset.Dataset,
+ object)
+</code></pre><h5 id="在每種情況下資料集均作為torchutilsdatadataset的子類return">在每種情況下，資料集均作為<code>torch.utils.data.Dataset</code>的子類return。</h5>
+<hr>
+<h3 id="2----the-dataset-class">2 &ndash; The Dataset class</h3>
+<p><img src="https://i.imgur.com/qZIkjF9.png" alt=""></p>
+<h6 id="tags-pytorch-dataset-物件的概念--它不一定包含資料但可以通過__len__-和-__getitem__對其進行統一訪問">tags: PyTorch <code>Dataset</code> 物件的概念&ndash;&gt;它不一定包含資料，但可以通過<code>__len__</code> 和 <code>__getitem__</code>對其進行統一訪問。</h6>
+<h4 id="實現所需的物件兩種方法">實現所需的物件兩種方法：</h4>
+<ol>
+<li><code>__len__</code> : 回傳資料集中的<strong>項目數</strong></li>
+<li><code>__getitem__</code> :回傳由樣本及其相應標籤（整數index）組成的項目</li>
+</ol>
+<pre tabindex="0"><code class="language-python=" data-lang="python="># In[5]:
+len(cifar10)
+</code></pre><p>實際上，當Python object配備了<code>__len__</code>方法時，我們可以將其作為參數傳遞給<code>len</code>這個內建函數：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Out[5]:</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">50000</span>
+</span></span></code></pre></div><p>同樣，dataset已配備<code>__getitem__</code>方法</p>
+<p>因此可以使用標準下標為tuples和list建立索引以訪問單個項</p>
+<pre tabindex="0"><code class="language-python=" data-lang="python="># In[6]:
+# 在這裡獲得一個帶有預期輸出的 PIL圖像
+#  (Python Imaging Library, the PIL package)
+#  一個值為的整數1，對應於類別“汽車”
+
+img, label = cifar10[99] 
+# why is 99??
+# 因為CIFAR-10資料集中的第99張圖像：一輛汽車
+img, label, class_names[label]
+</code></pre><pre tabindex="0"><code class="language-python=" data-lang="python="># Out[6]:
+(&lt;PIL.Image.Image image mode=RGB size=32x32 at 0x7FB383657390&gt;,
+ 1,
+ &#39;automobile&#39;)
+</code></pre><p><code>data.CIFAR10</code>資料集中的樣本是RGB PIL圖像的實例。可以立即將其繪製：</p>
+<pre tabindex="0"><code class="language-python=" data-lang="python="># In[7]:
+plt.imshow(img) #繪圖
+plt.show()
+</code></pre><h6 id="輸出為cifar-10資料集中的第99張圖像一輛汽車">輸出為CIFAR-10資料集中的第99張圖像：一輛汽車</h6>
+<p><img src="https://i.imgur.com/NJbpKQa.png" alt=""></p>
+<hr>
+<h3 id="3----dataset-transforms">3 &ndash; Dataset transforms</h3>
+<p>將PIL圖像轉換為Tensor: <code>torchvision.transforms</code></p>
+<p><code>torchvision.transforms</code> 定義一組可組合、類似於函數的物件，可以將這些物件作為參數傳遞給<code>torchvision</code>諸如的資料集<code>datasets.CIFAR10(...)</code>，並在資料加載後回傳之前由<code>__getitem__</code>對資料執行轉換。</p>
+<pre tabindex="0"><code class="language-python=" data-lang="python="># In[8]:
+from torchvision import transforms
+dir(transforms)
+</code></pre><pre tabindex="0"><code class="language-python=" data-lang="python="># Out[8]:
+[&#39;CenterCrop&#39;,
+ &#39;ColorJitter&#39;,
+ ...
+ &#39;Normalize&#39;,
+ &#39;Pad&#39;,
+ &#39;RandomAffine&#39;,
+ ...
+ &#39;RandomResizedCrop&#39;,
+ &#39;RandomRotation&#39;,
+ &#39;RandomSizedCrop&#39;,
+ ...
+ &#39;TenCrop&#39;,
+ &#39;ToPILImage&#39;,
+ &#39;ToTensor&#39;,
+ ...
+]
+</code></pre><h4 id="totensor其中一種transform"><strong>ToTensor</strong>(其中一種transform)</h4>
+<ul>
+<li>可將<strong>NumPy array</strong>和<strong>PIL圖像轉</strong>換為tensor</li>
+<li>tensor輸出維度:C × H × W (channel, height, width; just as we covered in chapter 4).</li>
+</ul>
+<pre tabindex="0"><code class="language-python=" data-lang="python="># In[9]:
+
+to_tensor = transforms.ToTensor()
+img_t = to_tensor(img)
+img_t.shape 
+# C × H × W (channel, height, width)
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Out[9]:</span>
+</span></span><span style="display:flex;"><span>torch<span style="color:#f92672">.</span>Size([<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">32</span>, <span style="color:#ae81ff">32</span>]) <span style="color:#75715e">#C × H × W </span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 該圖像已變成 3×32×32 tensor</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 因此變成了3通道（RGB）32×32圖像</span>
+</span></span></code></pre></div><h6 id="tags-注意label什麼都沒發生它仍然是整數">tags: 注意，<code>label</code>什麼都沒發生；它仍然是整數。</h6>
+<pre tabindex="0"><code class="language-python=" data-lang="python="># In[10]:
+# 可以直接通過變數轉換到dataset.CIFAR10
+tensor_cifar10 = datasets.CIFAR10(data_path, train=True, download=False,
+                          transform=transforms.ToTensor())
+</code></pre><p><strong>看訪問資料集的元素類型:</strong></p>
+<pre tabindex="0"><code class="language-python=" data-lang="python="># In[11]:
+img_t, _ = tensor_cifar10[99]
+type(img_t)
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Out[11]:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>torch<span style="color:#f92672">.</span>Tensor
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 此時，訪問資料集的元素將回傳tensor，而不是PIL圖像</span>
+</span></span></code></pre></div><p>The shape has the channel as the first dimension, while the scalar type is <code>float32</code>:</p>
+<pre tabindex="0"><code class="language-python=" data-lang="python="># In[12]:
+img_t.shape, img_t.dtype
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Out[12]:</span>
+</span></span><span style="display:flex;"><span>(torch<span style="color:#f92672">.</span>Size([<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">32</span>, <span style="color:#ae81ff">32</span>]), torch<span style="color:#f92672">.</span>float32)
+</span></span></code></pre></div><ul>
+<li>
+<p>原始PIL圖像中的值範圍從0到255（每通道8 bits）</p>
+</li>
+<li>
+<p><code>ToTensor</code>  turns the data into a <strong>32-bit floating-point per channel</strong>, scaling the values down from <strong>0.0 to 1.0</strong> :</p>
+</li>
+</ul>
+<pre tabindex="0"><code class="language-python=" data-lang="python="># In[13]:
+img_t.min(), img_t.max()
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Out[13]:</span>
+</span></span><span style="display:flex;"><span>(tensor(<span style="color:#ae81ff">0.</span>), tensor(<span style="color:#ae81ff">1.</span>))
+</span></span></code></pre></div><p>驗證是否得到了相同的圖像：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># In[14]:</span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>imshow(img_t<span style="color:#f92672">.</span>permute(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>))
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Out[14]:</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;</span>Figure size <span style="color:#ae81ff">432</span>x288 <span style="color:#66d9ef">with</span> <span style="color:#ae81ff">1</span> Axes<span style="color:#f92672">&gt;</span>
+</span></span></code></pre></div><p><img src="https://i.imgur.com/lCuoMND.png" alt=""></p>
+<h6 id="tags-注意如何使用permute更改軸的順序從chw到hwc與matplotlib預期的相匹配">tags: 注意如何使用<code>permute</code>更改軸的順序(從C×H×W到H×W×C)與Matplotlib預期的相匹配</h6>
+<hr>
+<h3 id="4----normalizing-data-資料正規化">4 &ndash; Normalizing data (資料正規化)</h3>
+<p>透過選擇<strong>linear activation functions</strong> <strong>(that are linear around 0 plus or minus 1 (or 2))</strong>，將資料保持在相同範圍內，意味著神經元更有可能具有<strong>非零梯度(nonzero gradients and)</strong>，因此能更快學習。</p>
+<p>同樣的，正規化每個channel以讓它具有相同的分佈，能確保可以使用相同的學習速率，通過梯度下降來混合和、更新channel的訊息。(參見ch4, 5)</p>
+<p>為了使每個通道的<strong>平均值(means)</strong> 和<strong>單一標準差(standard deviation)</strong> = 0，可以用以下轉換計算整個資料集中，每個channel的平均值和標準差：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>v_n[c] <span style="color:#f92672">=</span> (v[c] <span style="color:#f92672">-</span> mean[c]) <span style="color:#f92672">/</span> stdev[c]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># The values of &#34;mean&#34; and &#34;stdev&#34; must be computed offline </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># (they are not computed by the transform)</span>
+</span></span></code></pre></div><p>(上式是<code>transforms.Normalize</code>在做的運算)</p>
+<p>由於CIFAR-10資料集很小，因此我們將能夠在記憶體中完全對其進行操作。</p>
+<pre tabindex="0"><code class="language-python=" data-lang="python="># In[15]:
+#沿著額外的維度堆疊資料集，回傳的所有tensor：
+imgs = torch.stack([img_t for img_t, _ in tensor_cifar10], dim=3)
+imgs.shape
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Out[15]:</span>
+</span></span><span style="display:flex;"><span>torch<span style="color:#f92672">.</span>Size([<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">32</span>, <span style="color:#ae81ff">32</span>, <span style="color:#ae81ff">50000</span>])
+</span></span></code></pre></div><ul>
+<li>計算每個平均值(mean):</li>
+</ul>
+<pre tabindex="0"><code class="language-python=" data-lang="python="># In[16]:
+imgs.view(3, -1).mean(dim=1)
+ 
+# Out[16]:
+tensor([0.4915, 0.4823, 0.4468])
+</code></pre><ul>
+<li>計算標準差(standard deviation):</li>
+</ul>
+<pre tabindex="0"><code class="language-python=" data-lang="python="># In[17]:
+imgs.view(3, -1).std(dim=1)
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Out[17]:</span>
+</span></span><span style="display:flex;"><span>tensor([<span style="color:#ae81ff">0.2470</span>, <span style="color:#ae81ff">0.2435</span>, <span style="color:#ae81ff">0.2616</span>])
+</span></span></code></pre></div><ul>
+<li>用以上得到的數值初始化 the <code>Normalize</code> transform:</li>
+</ul>
+<pre tabindex="0"><code class="language-python=" data-lang="python=">#  In[18]:
+transforms.Normalize((0.4915, 0.4823, 0.4468), (0.2470, 0.2435, 0.2616))
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e">#  Out[18]:</span>
+</span></span><span style="display:flex;"><span>Normalize(mean<span style="color:#f92672">=</span>(<span style="color:#ae81ff">0.4915</span>, <span style="color:#ae81ff">0.4823</span>, <span style="color:#ae81ff">0.4468</span>), std<span style="color:#f92672">=</span>(<span style="color:#ae81ff">0.247</span>, <span style="color:#ae81ff">0.2435</span>, <span style="color:#ae81ff">0.2616</span>))
+</span></span></code></pre></div><ul>
+<li>連接之後的<code>ToTensor</code>變換(用<code>transforms.Compose</code>):</li>
+</ul>
+<pre tabindex="0"><code class="language-python=" data-lang="python="># In[19]:
+transformed_cifar10 = datasets.CIFAR10(
+    data_path, train=True, download=False,
+    transform=transforms.Compose([
+        transforms.ToTensor(),
+        transforms.Normalize((0.4915, 0.4823, 0.4468),
+                             (0.2470, 0.2435, 0.2616))
+    ]))
+</code></pre><p>請注意在這一點上，畫從資料集繪製的圖像，不會提供真實圖像的真實呈現：</p>
+<pre tabindex="0"><code class="language-python=" data-lang="python="># In[21]:
+img_t, _ = transformed_cifar10[99]
+ 
+plt.imshow(img_t.permute(1, 2, 0))
+plt.show()
+</code></pre><h6 id="-out21"># out[21]:</h6>
+<p><img src="" alt="Uploading file&amp;hellip;_lw9y4hj5g"></p>
+<h6 id="tags-正規化後的隨機cifar-10圖像">tags: 正規化後的隨機CIFAR-10圖像</h6>
+<p>我們得到的重新歸一化的紅色汽車</p>
+<ul>
+<li>因為正規化改變了RGB levels超出0.0~1.0範圍，並更改了通道的整體幅度(magnitudes of the channels)。</li>
+<li>所有資料仍然存在，只是Matplotlib將其呈現為黑色。</li>
+</ul>
+<hr>
+<h2 id="72-distinguishing-birds-from-airplanes從飛機上辨別鳥類">7.2 Distinguishing birds from airplanes(從飛機上辨別鳥類)</h2>
+<ol>
+<li>故事: 作者賞鳥俱樂部的朋友Jane在機場南面的樹林中，架一組攝影機，當物體進入鏡時，攝影機會保存鏡頭影像並將其上傳到俱樂部的部落格，供大家即時觀鳥。</li>
+<li>問題: 從機場進出的許多<strong>飛機</strong>觸發攝影機，因此Jane需花大量時間從部落格中<strong>刪除飛機的圖片</strong>。</li>
+<li>她需要一個<strong>自動系統</strong>：不需人工刪除，而是需要一個神經網絡。</li>
+</ol>
+<p><img src="" alt="Uploading file&amp;hellip;_iiirp00o7"></p>
+<h6 id="tags-眼前的問題--通過訓練神經網絡來幫助jane在飛機中分辨鳥類">tags: 眼前的問題&ndash;通過訓練神經網絡來幫助Jane在飛機中分辨鳥類</h6>
+<h3 id="1-從cifar-10資料集中挑選所有鳥類和飛機的資料並建立一個可以區分鳥類和飛機的神經網絡">:+1: 從CIFAR-10資料集中，挑選所有<strong>鳥類和飛機</strong>的資料，並建立一個可以區分鳥類和飛機的神經網絡。</h3>
+<h3 id="1----building-the-dataset">1 &ndash; Building the dataset:</h3>
+<p>第一步: get the data in the right shape</p>
+<p>可以創建一個<code>Dataset</code>僅包含鳥類和飛機
+(但資料集很小，我們只需建立索引，並讓<code>len</code>在資料集上工作即可。)</p>
+<p>實際上，它不一定是<code>torch.utils.data.dataset.Dataset</code>的子類</p>
+<pre tabindex="0"><code class="language-python=" data-lang="python="># In[5]:
+# filter the data in cifar10 
+# and remap the labels 
+# so they are contiguous
+label_map = {0: 0, 2: 1}
+class_names = [&#39;airplane&#39;, &#39;bird&#39;]
+cifar2 = [(img, label_map[label])
+          for img, label in cifar10
+          if label in [0, 2]]
+cifar2_val = [(img, label_map[label])
+              for img, label in cifar10_val
+              if label in [0, 2]]
+# The &#34;cifar2&#34; object satisfies the basic requirements for a &#34;Dataset&#34;
+# that is, &#39;__len__&#39; and &#39;__getitem__&#39; are defined
+</code></pre><p>這是一個聰明的捷徑，如果我們遇到限制，我們可能希望用適合的Dataset</p>
+<hr>
+<h3 id="2----a-fully-connected-model">2 &ndash; A fully connected model</h3>
+<ol>
+<li>從ch5 得知它是&rdquo; a tensor of features in, a tensor of features out &quot;</li>
+<li><strong>圖像</strong>只是在<strong>空間配置</strong>中排列的<strong>一組數字</strong></li>
+<li>理論上，如果僅獲取<strong>圖像像素</strong>，並將其拉直成<strong>一個長的一維向量</strong>，我們可以將這些數字視為<strong>輸入特徵</strong>(如下圖)
+<img src="" alt="Uploading file&amp;hellip;_lqs3adlrr"></li>
+</ol>
+<h6 id="tags-treating-our-image-as-a-1d-vector-of-values-and-training-a-fully-connected-classifier-on-it">tags: Treating our image as a 1D vector of values and training a fully connected classifier on it</h6>
+<ul>
+<li><strong>從ch5中構建的模型開始，新模型將是<code>nn.Linear</code>:</strong></li>
+</ul>
+<ol>
+<li>具有3072個input features的模型</li>
+<li>some number of hidden features, followed by an activation</li>
+<li>another <code>nn.Linear</code> that tapers the network down to (縮減到適當數量) an appropriate output number of features (2, for this use case)</li>
+</ol>
+<pre tabindex="0"><code class="language-python=" data-lang="python="># In[6]:
+import torch.nn as nn
+
+n_out = 2
+
+model = nn.Sequential(
+            nn.Linear(
+            # 32×32×3：每個樣本3,072個輸入特徵
+                3072,  #input feature
+                512,   #hidden layer size
+                # arbitrarily(任意) pick 512 hidden features
+            ),
+            nn.Tanh(),
+            nn.Linear(
+                512,
+                n_out,  #output class:輸出類別
+            )
+        )
+</code></pre><ul>
+<li>一個神經網絡需要至少一個隱藏層(of activations, so two modules）之間具有非線性</li>
+<li><strong>隱藏的特徵</strong>表示<strong>通過權重矩陣編碼的輸入之間的（學習）關係</strong></li>
+</ul>
+<hr>
+<h3 id="3----output-of-a-classifier">3 &ndash; Output of a classifier</h3>
+<ul>
+<li>make our network output a single scalar value（so n_out = 1）</li>
+<li>將標籤轉換為浮點數（飛機為0.0，鳥為1.0），</li>
+<li>將其為MSELoss（the average of squared differences in the batch）當成目標為</li>
+<li>這樣做會將問題轉化為回歸問題</li>
+</ul>
+<p><strong>output is categorical</strong>: it’s either a bird or an airplane (or something else if we had all 10 of the original classes).
+簡單來說，就是當我們必須表示分類變量(categorical variable)時，應該切換到該變量的<strong>one-hot-encoding</strong>形式，例如[1, 0]飛機或[0, 1]鳥類（順序是任意的）。</p>
+<p>理想情況:</p>
+<table>
+<thead>
+<tr>
+<th>類別</th>
+<th>飛機</th>
+<th>鳥</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>預期輸出</td>
+<td>torch.tensor([1.0, 0.0])</td>
+<td>torch.tensor([0.0, 1.0]</td>
+</tr>
+</tbody>
+</table>
+<h6 id="tags-關鍵的實現是--可以將輸出解釋為機率第一個輸入是飛機的機率第二個輸入是鳥的機率">tags: 關鍵的實現是&ndash;可以將&quot;輸出&quot;解釋為&quot;機率&quot;：第一個輸入是“飛機”的機率，第二個輸入是“鳥”的機率</h6>
+<p><strong>&laquo;Casting the problem in terms of probabilities imposes a few extra constraints on the outputs of our network&raquo;:</strong></p>
+<ol>
+<li>輸出的每個元素必須在[0.0, 1.0]範圍內（結果的機率不能小於0或大於1）。</li>
+<li>輸出元素的總和必須為1.0（會出現兩種結果之一）。</li>
+</ol>
+<hr>
+<h3 id="4----representing-the-output-as-probabilities這裡會介紹softmax">4 &ndash; Representing the output as probabilities(這裡會介紹softmax)</h3>
+<p>Enforce in a differentiable way on a vector of numbers &ndash;&gt; <em><strong>softmax</strong></em> (differentiable)</p>
+<p><a href="https://kknews.cc/code/np4ya5.html"><img src="https://i.imgur.com/YOG7Q6g.png" alt=""></a></p>
+<p><em><strong>Softmax</strong></em> is a function that <strong>takes a vector of values and produces another vector of the same dimension</strong>(它使用值的向量並生成另一個維度相同的向量), where the values satisfy the constraints we just listed to represent probabilities.</p>
+<p><img src="" alt="Uploading file&amp;hellip;_s5rzazuf3"></p>
+<pre tabindex="0"><code class="language-python=" data-lang="python="># In[7]:
+# 取向量的元素，計算元素指數，然後將每個元素除以指數和
+def softmax(x):
+    return torch.exp(x) / torch.exp(x).sum()
+</code></pre><ul>
+<li>Test it on an input vector:</li>
+</ul>
+<pre tabindex="0"><code class="language-python=" data-lang="python="># In[8]:
+x = torch.tensor([1.0, 2.0, 3.0])
+ 
+softmax(x)
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Out[8]:</span>
+</span></span><span style="display:flex;"><span>tensor([<span style="color:#ae81ff">0.0900</span>, <span style="color:#ae81ff">0.2447</span>, <span style="color:#ae81ff">0.6652</span>])
+</span></span></code></pre></div><ul>
+<li>As expected, it satisfies the constraints(約束) on probability:</li>
+</ul>
+<pre tabindex="0"><code class="language-python=" data-lang="python="># In[9]:
+softmax(x).sum()
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Out[9]:</span>
+</span></span><span style="display:flex;"><span>tensor(<span style="color:#ae81ff">1.</span>)
+</span></span></code></pre></div><ol>
+<li>softmax是monotone function: 輸入的較低值，對應於輸出中的較低值。</li>
+<li>It’s not scale invariant(不變), in that the ratio between values is not preserved</li>
+<li>學習過程將以<strong>值</strong>(value)具有適當比率的方式來驅動模型的參數</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>softmax</th>
+<th>input</th>
+<th>correspond to</th>
+<th>output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>lower</td>
+<td>&lt;&mdash;&mdash;&mdash;&mdash;&gt;</td>
+<td>lower</td>
+</tr>
+<tr>
+<td>value</td>
+<td>higher</td>
+<td>&lt;&mdash;&mdash;&mdash;&mdash;&gt;</td>
+<td>higher</td>
+</tr>
+</tbody>
+</table>
+<p><code>nn</code>模塊使softmax可當成模塊。</p>
+<p>像往常一樣，輸入tensor可能具有額外的 batch 0th dimension，或俱有沿其<strong>編碼機率</strong>而<strong>沒有沿機率編碼的維度</strong>。</p>
+<p>因此<code>nn.Softmax</code>需要指定要應用softmax函數的尺寸：</p>
+<pre tabindex="0"><code class="language-python=" data-lang="python="># In[10]:
+softmax = nn.Softmax(dim=1)
+ 
+x = torch.tensor([[1.0, 2.0, 3.0],
+                  [1.0, 2.0, 3.0]])
+ 
+softmax(x)
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Out[10]:</span>
+</span></span><span style="display:flex;"><span>tensor([[<span style="color:#ae81ff">0.0900</span>, <span style="color:#ae81ff">0.2447</span>, <span style="color:#ae81ff">0.6652</span>],
+</span></span><span style="display:flex;"><span>        [<span style="color:#ae81ff">0.0900</span>, <span style="color:#ae81ff">0.2447</span>, <span style="color:#ae81ff">0.6652</span>]])
+</span></span></code></pre></div><p>We have <strong>two input vectors</strong> in <strong>two rows</strong> (just like when we work with batches), so we initialize <code>nn.Softmax</code> to operate along dimension 1.</p>
+<pre tabindex="0"><code class="language-python=" data-lang="python="># In[11]:
+model = nn.Sequential(
+            nn.Linear(3072, 512),
+            nn.Tanh(),
+            nn.Linear(512, 2),
+            nn.Softmax(dim=1)) # 模型的末尾添加一個softmax
+</code></pre><ul>
+<li>在訓練模型之前嘗試running module:</li>
+</ul>
+<pre tabindex="0"><code class="language-python=" data-lang="python="># In[12]:
+# 構建一個圖像
+img, _ = cifar2[0] #a batch of one image, our bird
+plt.imshow(img.permute(1, 2, 0))
+plt.show()
+</code></pre><p><img src="" alt="Uploading file&amp;hellip;_qb82hznxr"></p>
+<h6 id="tags--cifar-10資料集中的一隻隨機鳥正規化後">tags:  CIFAR-10資料集中的一隻隨機鳥（正規化後）</h6>
+<ul>
+<li>為了call the model，我們需要使輸入具有正確的尺寸。</li>
+<li>Our model expects 3,072 features in the input, and that <code>nn</code> works with data organized into batches along the zeroth dimension.</li>
+</ul>
+<pre tabindex="0"><code class="language-python=" data-lang="python="># In[13]:
+# 將3×32×32圖像轉換為1D tensor
+# 在第0位置添加額外的維度
+img_batch = img.view(-1).unsqueeze(0)
+</code></pre><pre tabindex="0"><code class="language-python=" data-lang="python="># In[14]:
+# invoke our model
+out = model(img_batch)
+out
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Out[14]:</span>
+</span></span><span style="display:flex;"><span>tensor([[<span style="color:#ae81ff">0.4784</span>, <span style="color:#ae81ff">0.5216</span>]], grad_fn<span style="color:#f92672">=&lt;</span>SoftmaxBackward<span style="color:#f92672">&gt;</span>)
+</span></span></code></pre></div><p>In our case, we need to take the max along the probability vector (not across batches), therefore, dimension 1:</p>
+<pre tabindex="0"><code class="language-python=" data-lang="python="># In[15]:
+# 當提供維度時，torch.max返回最大值沿該維度的元素以及該值出現的index
+_, index = torch.max(out, dim=1)
+ 
+index
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Out[15]:</span>
+</span></span><span style="display:flex;"><span>tensor([<span style="color:#ae81ff">1</span>])
+</span></span></code></pre></div><h4 id="小節">小節:</h4>
+<ol>
+<li>通過將<strong>模型輸出</strong>轉換為<strong>輸出機率</strong>來調整模型輸出，以適應手頭的分類任務</li>
+<li>針對輸入圖像running模型，並驗證plumbing works是否有效</li>
+</ol>
+<hr>
+<h3 id="5----a-loss-for-classifying">5 &ndash; A loss for classifying</h3>
+<p>使用了均方差（MSE）作為損失
+可以用MSE並使輸出機率收斂於[0.0, 1.0]和[1.0, 0.0]
+飛機的第一個機率高於第二個機率，而鳥類則相反</p>
+<p>What we need to maximize in this case is the probability associated with the correct class, <code>out[class_index]</code>, where <code>out</code> is the output of softmax and <code>class_index</code> is a vector containing 0 for “airplane” and 1 for “bird” for each sample.</p>
+<p>This quantity&ndash;that is, the probability associated with the correct class&ndash;is referred to as the <em><strong>likelihood</strong></em> (of our model’s parameters, given the data)</p>
+<p>簡單來說，我們希望損失函數在likelihood很低時非常高，likelihood之低，以至於替代方案的可能性更高。</p>
+<p>反之，當likelihood比其他替代方案高時，損失應該很小，而我們並沒有真正將機率提高到1。</p>
+<p>** <strong>negative log likelihood (NLL)</strong> &ndash; a loss function that behaves that way</p>
+<pre tabindex="0"><code class="language-python=" data-lang="python=">NLL = - sum(log(out_i[c_i]))
+# the sum is taken over N samples 
+# c_i is the correct class for sample i.
+</code></pre><p><img src="https://i.imgur.com/KMFOf8a.png" alt=""></p>
+<h6 id="tags-the-nll-loss-as-a-function-of-the-predicted-probabilities">tags: The NLL loss as a function of the predicted probabilities</h6>
+<p>上圖顯示，當為資料分配到低機率時，NLL增長到無窮大；
+當機率大於0.5時，NLL以相當淺的速率降低。</p>
+<p>★ NLL以<strong>機率</strong>為輸入；因此，隨著likelihood的增加，其他機率必然會降低。</p>
+<p>綜上所述，我們的分類損失可以如下計算(For each sample in the batch)：</p>
+<ul>
+<li>Run the forward pass, 並從最後一（線性）層獲取輸出值。</li>
+<li>計算他們的softmax，並獲得probabilities(機率)。</li>
+<li>取對應於正確類別的預測機率(the likelihood of the parameters）。(supervised problem)</li>
+<li>計算logarithm(對數)，在其前面打一個減號，然後將其添加到損失中。</li>
+</ul>
+<p>★ <code>nn.NLLLoss</code> class:
+相對而言達到預期，它不會採用probabilities，而會將log probabilities tensor作為輸入。
+計算NLL給定了一批資料輸入，當機率接近0時，取機率的對數是很棘手的。
+解決方法是<code>nn.LogSoftmax</code>而不是<code>nn.Softmax</code>，這需要注意使計算數值穩定。</p>
+<pre tabindex="0"><code class="language-python=" data-lang="python=">model = nn.Sequential(
+             nn.Linear(3072, 512),
+             nn.Tanh(),
+             nn.Linear(512, 2),
+             nn.LogSoftmax(dim=1))
+</code></pre><pre tabindex="0"><code class="language-python=" data-lang="python=">#  instantiate our NLL loss
+loss = nn.NLLLoss()
+</code></pre><pre tabindex="0"><code class="language-python=" data-lang="python=">img, label = cifar2[0]
+ 
+out = model(img.view(-1).unsqueeze(0))
+ 
+loss(out, torch.tensor([label]))
+# first argument -- loss取&#39;nn.LogSoftmax&#39;一批的輸出
+# second argument -- a tensor of class indices (zeros and ones, in our case)
+tensor(0.6509, grad_fn=&lt;NllLossBackward&gt;)
+</code></pre><h4 id="使用交叉熵loss如何比mse有所改善">使用交叉熵loss如何比MSE有所改善:</h4>
+<p>當<strong>預測偏離目標</strong>時，交叉熵loss有一定的斜率（在低損耗角落，正確的類別被分配了99.97％的預測機率）；而MSE在一開始就更早飽和，更重要的是，對於非常錯誤的預測也是如此。</p>
+<p>根本原因&ndash;MSE的斜率太低，無法補償針對錯誤預測的softmax函數的 flatness。</p>
+<p>這就是為什麼針對機率的MSE不適用於分類的原因。</p>
+<p><img src="" alt="Uploading file&amp;hellip;_h0olvyr0r"></p>
+<h6 id="tags-the-cross-entropy-left-and-mse-between-predicted-probabilities-and-the-target-probability-vector-right-as-functions-of-the-predicted-scores--that-is-before-the-log--softmax">tags: The cross entropy (left) and MSE between predicted probabilities and the target probability vector (right) as functions of the predicted scores&ndash;that is, before the (log-) softmax</h6>
+<hr>
+<h3 id="6----training-the-classifier">6 &ndash; Training the classifier</h3>
+<pre tabindex="0"><code class="language-python=" data-lang="python=">import torch
+import torch.nn as nn
+ 
+model = nn.Sequential(
+            nn.Linear(3072, 512),
+            nn.Tanh(),
+            nn.Linear(512, 2),
+            nn.LogSoftmax(dim=1))
+ 
+learning_rate = 1e-2
+ 
+optimizer = optim.SGD(model.parameters(), lr=learning_rate)
+ 
+loss_fn = nn.NLLLoss()
+ 
+n_epochs = 100
+ 
+for epoch in range(n_epochs):
+    for img, label in cifar2:
+        out = model(img.view(-1).unsqueeze(0))
+        loss = loss_fn(out, torch.tensor([label]))
+ 
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+ 
+    print(&#34;Epoch: %d, Loss: %f&#34; % (epoch, float(loss)))
+</code></pre><p><img src="" alt="Uploading file&amp;hellip;_m3i090my6"></p>
+<h6 id="tags-訓練循環a在整個資料集中平均更新b在每個樣本上更新模型c平均迷你批次的更新">tags: 訓練循環：（A）在整個資料集中平均更新；（B）在每個樣本上更新模型；（C）平均迷你批次的更新</h6>
+<p>在微型批處理上估計的以下梯度（在整個數據集上估計的梯度較差）有助於收斂並防止優化過程陷入其在過程中遇到的<strong>局部最小值</strong>
+<img src="" alt="Uploading file&amp;hellip;_kodk268zk"></p>
+<h6 id="tags-整個資料集light-path的平均梯度下降與隨機梯度下降的平均值其中梯度是在隨機選取的minibatches上估算的">tags: 整個資料集（light path）的平均梯度下降與隨機梯度下降的平均值，其中梯度是在<strong>隨機選取</strong>的minibatches上估算的</h6>
+<p><img src="https://i.imgur.com/2PnivcH.png" alt=""></p>
+<h6 id="tags-資料加載器通過使用資料集對單個資料項進行採樣來分配小批量">tags: 資料加載器通過使用資料集對單個資料項進行採樣來分配小批量</h6>
+<p><code>torch.utils.data</code>模塊有一個class，可幫助在小型批次中改組和組織資料：<code>DataLoader</code>。
+資料加載器的工作是從資料集中對微型批次進行採樣
+從而可以靈活地選擇不同的採樣策略</p>
+<p>(一個常見的策略: 在每個時期對資料進行混洗後進行均勻採樣)</p>
+<pre tabindex="0"><code class="language-python=" data-lang="python=">train_loader = torch.utils.data.DataLoader(cifar2, batch_size=64,
+                                           shuffle=True)
+                                           
+# At a minimum, the &#39;DataLoader&#39; constructor takes a Dataset object as input,
+# along with &#39;batch_size&#39; and a &#39;shuffle&#39; Boolean 
+# that indicates whether the data needs to be shuffled at the beginning of each epoch
+</code></pre><pre tabindex="0"><code class="language-python=" data-lang="python="># A &#39;DataLoader&#39; can be iterated over
+# so we can use it directly in the inner loop of our new training code
+import torch
+import torch.nn as nn
+ 
+train_loader = torch.utils.data.DataLoader(cifar2, batch_size=64,
+                                           shuffle=True)
+ 
+model = nn.Sequential(
+            nn.Linear(3072, 512),
+            nn.Tanh(),
+            nn.Linear(512, 2),
+            nn.LogSoftmax(dim=1))
+ 
+learning_rate = 1e-2
+ 
+optimizer = optim.SGD(model.parameters(), lr=learning_rate)
+ 
+loss_fn = nn.NLLLoss()
+ 
+n_epochs = 100
+ 
+for epoch in range(n_epochs):
+    for imgs, labels in train_loader:
+        batch_size = imgs.shape[0]
+        outputs = model(imgs.view(batch_size, -1))
+        loss = loss_fn(outputs, labels)
+ 
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+ 
+     print(&#34;Epoch: %d, Loss: %f&#34; % (epoch, float(loss)))
+</code></pre><p>在每個內部iteration中，imgs大小為64×3×32×32的tensor-即一小批包含64張（32×32）RGB圖像-而labels大小為64的tensor包含label索引</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># 訓練</span>
+</span></span><span style="display:flex;"><span>Epoch: <span style="color:#ae81ff">0</span>, Loss: <span style="color:#ae81ff">0.523478</span>
+</span></span><span style="display:flex;"><span>Epoch: <span style="color:#ae81ff">1</span>, Loss: <span style="color:#ae81ff">0.391083</span>
+</span></span><span style="display:flex;"><span>Epoch: <span style="color:#ae81ff">2</span>, Loss: <span style="color:#ae81ff">0.407412</span>
+</span></span><span style="display:flex;"><span>Epoch: <span style="color:#ae81ff">3</span>, Loss: <span style="color:#ae81ff">0.364203</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span>Epoch: <span style="color:#ae81ff">96</span>, Loss: <span style="color:#ae81ff">0.019537</span>
+</span></span><span style="display:flex;"><span>Epoch: <span style="color:#ae81ff">97</span>, Loss: <span style="color:#ae81ff">0.008973</span>
+</span></span><span style="display:flex;"><span>Epoch: <span style="color:#ae81ff">98</span>, Loss: <span style="color:#ae81ff">0.002607</span>
+</span></span><span style="display:flex;"><span>Epoch: <span style="color:#ae81ff">99</span>, Loss: <span style="color:#ae81ff">0.026200</span>
+</span></span></code></pre></div><p>看到loss以某種方式減少，但是不知道loss是否足夠低。
+由於我們的目標是<strong>正確地為圖像分配類別</strong>，並且最好在一個<strong>獨立的資料集</strong>上進行。
+因此我們可以根據<strong>正確類別的總數</strong>在<strong>驗證集上</strong>計算模型的準確性：</p>
+<pre tabindex="0"><code class="language-python=" data-lang="python=">val_loader = torch.utils.data.DataLoader(cifar2_val, batch_size=64,
+                                         shuffle=False)
+ 
+correct = 0
+total = 0
+ 
+with torch.no_grad():
+    for imgs, labels in val_loader:
+        batch_size = imgs.shape[0]
+        outputs = model(imgs.view(batch_size, -1))
+        _, predicted = torch.max(outputs, dim=1)
+        total += labels.shape[0]
+        correct += int((predicted == labels).sum())
+ 
+print(&#34;Accuracy: %f&#34;, correct / total)
+ 
+Accuracy: 0.794000
+</code></pre><pre tabindex="0"><code class="language-python=" data-lang="python="># 相當任意的多層 (透過更多層來為模型添加一些亮點)
+model = nn.Sequential(
+            nn.Linear(3072, 1024),
+            nn.Tanh(),
+            nn.Linear(1024, 512),
+            nn.Tanh(),
+            nn.Linear(512, 128),
+            nn.Tanh(),
+            nn.Linear(128, 2),
+            nn.LogSoftmax(dim=1))
+</code></pre><p>The combination of <code>nn.LogSoftmax</code> and <code>nn.NLLLoss</code> is equivalent to using <code>nn.CrossEntropyLoss</code>.</p>
+<p><code>nn.NLLoss</code>: 實際上計算的是交叉熵，但對數機率預測為輸入<code>nn.CrossEntropyLoss</code>得分的地方（有時稱為logits）。
+從技術上講，<code>nn.NLLLoss</code>是狄拉克分佈之間的交叉熵，將所有質量放在目標上，並通過對數機率輸入給出預測的分佈。</p>
+<p>To add to the confusion, in information theory, up to normalization by sample size, this cross entropy can be interpreted as a negative log likelihood of the predicted distribution under the target distribution as an outcome.</p>
+<p>當我們的模型預測（softmax應用的）機率時，這兩個loss都是給定資料的模型參數的negative log likelihood</p>
+<pre tabindex="0"><code class="language-python=" data-lang="python=">model = nn.Sequential(
+            nn.Linear(3072, 1024),
+            nn.Tanh(),
+            nn.Linear(1024, 512),
+            nn.Tanh(),
+            nn.Linear(512, 128),
+            nn.Tanh(),
+            nn.Linear(128, 2))
+ 
+loss_fn = nn.CrossEntropyLoss() 
+# 刪除nn.LogSoftmax網絡的最後一層並把nn.CrossEntropyLoss當成損失
+</code></pre><p>唯一的麻煩：模型輸出不會被解釋為機率（或對數機率）。
+需要通過softmax傳遞輸出以獲得這些輸出。</p>
+<ul>
+<li><code>parameters()</code> method of <code>nn.Model</code>: 一種快速的方法來確定多少個參數模型(用來提供參數給優化器)
+我們可能希望將可訓練參數的數量與整個模型的大小區分開。</li>
+</ul>
+<pre tabindex="0"><code class="language-python=" data-lang="python="># In[7]:
+numel_list = [p.numel() #要找出每個tensor實例中有多少個元素，我們可以調用該numel方法
+              for p in connected_model.parameters()
+              if p.requires_grad == True
+              #根據我們的用例，計算參數可能需要我們檢查參數是否也requires_grad設置True]
+sum(numel_list), numel_list
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Out[7]:</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">3737474</span>, [<span style="color:#ae81ff">3145728</span>, <span style="color:#ae81ff">1024</span>, <span style="color:#ae81ff">524288</span>, <span style="color:#ae81ff">512</span>, <span style="color:#ae81ff">65536</span>, <span style="color:#ae81ff">128</span>, <span style="color:#ae81ff">256</span>, <span style="color:#ae81ff">2</span>])
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#370萬個參數，網路很龐大</span>
+</span></span></code></pre></div><pre tabindex="0"><code class="language-python=" data-lang="python="># In[9]:
+numel_list = [p.numel() for p in first_model.parameters()]
+sum(numel_list), numel_list
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Out[9]:</span>
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">1574402</span>, [<span style="color:#ae81ff">1572864</span>, <span style="color:#ae81ff">512</span>, <span style="color:#ae81ff">1024</span>, <span style="color:#ae81ff">2</span>])
+</span></span></code></pre></div><p>第一個模型中的參數數量大約是最新模型中參數的一半。</p>
+<p>從單個參數大小的列表中，開始知道是什麼原因：
+第一個模塊具有150萬個參數
+在我們的整個網絡中，我們具有1024個輸出功能，這導致第    一個線性模塊具有300萬個參數
+知道線性層可以計算y = weight * x + bias
+且如果x長度為3072（為簡單起見，不考慮批處理維度）
+且y長度必須為1024
+則weight tensor的bias大小必須為1024×3072，且大小必須為1024。</p>
+<p>正如我們先前所發現的，1024 * 3072 + 1024 = 3146752。我們可以直接驗證這些數量：</p>
+<pre tabindex="0"><code class="language-python=" data-lang="python="># In[10]:
+linear = nn.Linear(3072, 1024)
+ 
+linear.weight.shape, linear.bias.shape
+</code></pre><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Out[10]:</span>
+</span></span><span style="display:flex;"><span>(torch<span style="color:#f92672">.</span>Size([<span style="color:#ae81ff">1024</span>, <span style="color:#ae81ff">3072</span>]), torch<span style="color:#f92672">.</span>Size([<span style="color:#ae81ff">1024</span>]))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 我們的神經網絡無法隨像素數量很好地縮放</span>
+</span></span></code></pre></div><p>Q : 如果我們有1024×1024 RGB圖像怎麼辦？
+A: 那是310萬個輸入值。</p>
+<p>即使突然使用1024個hidden features（對於我們的分類器也不起作用），也將擁有超過30億個參數。</p>
+<p>使用32位浮點數，且已有12 GB的RAM，甚至還沒有達到第二層，更不用說計算和存儲漸變了。這只是不適合大多數當今的GPU。</p>
+<hr>
+<h3 id="7----the-limits-of-going-fully-connected">7 &ndash; The limits of going fully connected</h3>
+<p>獲取每個輸入值一樣，即RGB中的每個單個分量圖像-並將其與每個輸出要素的所有其他值進行線性組合。
+一方面，我們允許圖像中任何像素與每個其他像素的組合可能與我們的任務相關。另一方面，由於我們將圖像視為數字的一個大向量，因此我們沒有利用相鄰像素或遙遠像素的相對位置。
+<img src="" alt="Uploading file&amp;hellip;_fh2185pzq"></p>
+<h6 id="tags-使用帶有輸入圖像的完全連接的模塊每個輸入像素彼此組合在一起以在輸出中生成每個元素">tags: 使用帶有輸入圖像的完全連接的模塊：每個輸入像素彼此組合在一起，以在輸出中生成每個元素。</h6>
+<p><img src="" alt="Uploading file&amp;hellip;_q3z0knz2n"></p>
+<h6 id="tags-translation-invariance-or-the-lack-thereof-with-fully-connected-layers具有完全連接的層的平移不變性或缺少">tags: Translation invariance, or the lack thereof, with fully connected layers(具有完全連接的層的平移不變性或缺少)</h6>
+<p>問題和網絡結構之間的不匹配，最終導致過度吻合了訓練資料，而不是學習模型要檢測的一般特徵。</p>
+<hr>
+<h2 id="7-3-結論">7-3 結論</h2>
+<p>解決了一個簡單的分類問題：從資料集到模型，再到最小化訓練循環中的適當Loss</p>
+<p>作者發現他們的模型存在嚴重缺陷：一直將2D圖像視為1D資料。
+同樣，我們沒有自然的方法來合併問題的平移不變性</p>
+<hr>
+<p>下一章：學習如何利用圖像資料的2D性質來獲得更好的結果</p>
+<p>可以立即使用學到的知識來處理資料，而不會出現這種translation invariance</p>
+
+        </div>
+
+        
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hicbcb" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<footer class="text-capitalize">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center mb-5">
+        <a href="https://hicbcb.github.io"><img src="https://hicbcb.github.io/images/Leona1.png" alt="Leona&#39;s website"></a>
+      </div>
+               
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Contact Me</h6>
+        <ul class="list-unstyled">
+          
+          <li class="mb-3"><a class="text-dark" href="tel:hicbcb"><i
+                class="ti-mobile mr-3 text-primary"></i>hicbcb</a></li>
+          
+                     
+          <li class="mb-3"><i class="ti-location-pin mr-3 text-primary"></i>Tainan, Taiwan</li>
+          
+                     
+          <li class="mb-3"><a class="text-dark" href="mailto:hicbcb@email.com"><i
+                class="ti-email mr-3 text-primary"></i>hicbcb@email.com</a>
+          
+          </li>
+        </ul>
+      </div>
+      
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Social Contacts</h6>
+        <ul class="list-unstyled">
+          
+          <li class="mb-3"><a class="text-dark" href="https://www.facebook.com/hicbcb/">facebook</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://www.instagram.com/tuxedo_batcat/">instagram</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://github.com/hicbcb">github</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="#">linkedin</a></li>
+          
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Categories</h6>
+        <ul class="list-unstyled">
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/learning-note/">Learning note</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/reading-note/">Reading note</a>
+          </li>
+          <li class="mb-3"><a class="text-dark"
+              href="/categories/research-note/">Research note</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5">
+        <h6 class="mb-4">Quick Links</h6>
+        <ul class="list-unstyled">
+          
+          <li class="mb-3"><a class="text-dark" href="https://hicbcb.github.io/about/">About</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://hicbcb.github.io/blog/">Post</a></li>
+          
+          <li class="mb-3"><a class="text-dark" href="https://hicbcb.github.io/contact/">Contact</a></li>
+          
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+<script>
+  var indexURL = "https://hicbcb.github.io/index.json"
+</script>
+
+<!-- JS Plugins -->
+
+<script src="https://hicbcb.github.io/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://hicbcb.github.io/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://hicbcb.github.io/plugins/slick/slick.min.js"></script>
+
+<script src="https://hicbcb.github.io/plugins/venobox/venobox.min.js"></script>
+
+<script src="https://hicbcb.github.io/plugins/search/fuse.min.js"></script>
+
+<script src="https://hicbcb.github.io/plugins/search/mark.js"></script>
+
+<script src="https://hicbcb.github.io/plugins/search/search.js"></script>
+
+<!-- Main Script -->
+
+<script src="https://hicbcb.github.io/js/script.min.js"></script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-sm btn-primary ml-2">I Accept</span>
+</div>
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires:  2 
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
+
+
+<style>
+.cookie-box {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 9999;
+  padding: 1rem 2rem;
+  background: rgb(71, 71, 71);
+  transition: all .75s cubic-bezier(.19, 1, .22, 1);
+  color: #fdfdfd;
+}
+
+.cookie-box-hide {
+  display: none;
+}
+</style>
+</body>
+</html>

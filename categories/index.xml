@@ -8,11 +8,29 @@
     <language>zh-tw</language>
     <lastBuildDate>Sun, 29 Aug 2021 10:07:47 +0800</lastBuildDate><atom:link href="https://hicbcb.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Document</title>
-      <link>https://hicbcb.github.io/categories/document/</link>
+      <title>Research Note</title>
+      <link>https://hicbcb.github.io/categories/research-note/</link>
       <pubDate>Sun, 29 Aug 2021 10:07:47 +0800</pubDate>
       
-      <guid>https://hicbcb.github.io/categories/document/</guid>
+      <guid>https://hicbcb.github.io/categories/research-note/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reading Note</title>
+      <link>https://hicbcb.github.io/categories/reading-note/</link>
+      <pubDate>Wed, 24 Mar 2021 22:08:55 +0800</pubDate>
+      
+      <guid>https://hicbcb.github.io/categories/reading-note/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Learning Note</title>
+      <link>https://hicbcb.github.io/categories/learning-note/</link>
+      <pubDate>Fri, 15 Jan 2021 15:22:00 +0800</pubDate>
+      
+      <guid>https://hicbcb.github.io/categories/learning-note/</guid>
       <description></description>
     </item>
     
