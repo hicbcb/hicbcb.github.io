@@ -5,7 +5,7 @@
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="this is meta description">
+  <meta name="description" content="Install gurobi &amp; get license">
   <meta name="author" content="Leona">
   <meta name="generator" content="Hugo 0.95.0" />
 
@@ -130,60 +130,96 @@
 </header>
 <!-- /navigation -->
 
-<section class="section-sm pb-0">
+<section class="section-sm">
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 text-center">
-        <h2>Get In Touch</h2>
-        <div class="content mb-4">
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea</p>
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        
+        <a href="/categories/document"
+          class="text-primary">Document</a>
+        
+        <h2>Install gurobi &amp; get license</h2>
+        <div class="mb-3 post-meta">
+          <span>By Leona</span>
+          
+          <span class="border-bottom border-primary px-2 mx-1"></span>
+          <span>29 August 2021</span>
+          
+        </div>
+        
+        <img src="https://hicbcb.github.io/images/featured-post/mao1.jpeg" class="img-fluid w-100 mb-4" alt="Install gurobi &amp; get license">
+        
+        <div class="content mb-5">
+          <h1 id="how-to-install-gurobi-python-and-get-academic-licence-windows"><strong>How to install gurobi python and get academic licence (Windows)</strong></h1>
+<h2 id="install-gurobi--get-license"><strong><code>Install gurobi &amp; get license</code></strong></h2>
+<h3 id="1--log-in-with-your-academy-email-httpswwwgurobicomdownloads--and-download-gurobi-optimizer">1.  Log in with your academy email (<a href="https://www.gurobi.com/downloads/">https://www.gurobi.com/downloads/</a>)  and download Gurobi Optimizer.</h3>
+<p><img src="https://i.imgur.com/L1gFYH3.png" alt=""></p>
+<h3 id="chose-the-corresponding-version"><code>Chose the corresponding version</code></h3>
+<p><img src="https://i.imgur.com/wIU2u9h.png" alt=""></p>
+<p><img src="https://i.imgur.com/oO1UP8w.png" alt=""></p>
+<h3 id="2-access-the-licence-academy">2. Access the licence (Academy)</h3>
+<p>Use the academic License:</p>
+<p><img src="https://i.imgur.com/iXjhfAJ.png" alt=""></p>
+<p><img src="https://i.imgur.com/eM3NRlk.png" alt=""></p>
+<p>copy your key  (in this example is &quot; grbgetkey 53f2fe08-fade-11eb-8a57-0242ac130004 &ldquo;)</p>
+<h2 id="activate-gurobi"><strong><code>Activate Gurobi</code></strong></h2>
+<h3 id="1-open-your-cmd-or-wsl-and-paste-your-gurobi-licence-key">1. Open Your cmd or WSL, and paste your Gurobi licence key</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> grbgetkey 53f2fe08-fade-11eb-8a57-0242ac130004
+</span></span></code></pre></div><p><img src="https://i.imgur.com/XmnJTiD.png" alt=""></p>
+<p>copy the file path &ldquo;C:\Users\USER\y\gurobi.lic&rdquo;</p>
+<blockquote>
+<p>If it shows the message &ldquo;Unable to contact key server&rdquo;, it means failure of activation. You should redo the previous steps.</p>
+</blockquote>
+<h3 id="2-setting--environment-variable">2. Setting  Environment Variable</h3>
+<p><img src="https://i.imgur.com/vlVUcpE.png" alt="">
+Windows —&gt; Setting —&gt; About —&gt;Advance system setting —&gt; Environment variable</p>
+<p><img src="https://i.imgur.com/fqUfsIw.png" alt="">
+System Variable —&gt; add a system variable with name &ldquo;GRB_LICENSE_FILE&rdquo; and value &ldquo;C:\Users\USER\y\gurobi.lic&rdquo; (your file path).</p>
+<p><img src="https://i.imgur.com/55sybec.png" alt="">
+Paste &ldquo;the file path &ldquo;C:\Users\USER\y\gurobi.lic&rdquo; on variable value.</p>
+<h2 id="install-gurobi-into-python-library"><code>Install Gurobi into python library</code></h2>
+<ul>
+<li><strong>Open terminal in the file which is installed  <code>Gurobi</code></strong></li>
+</ul>
+<p><img src="https://i.imgur.com/Kx5SlTs.png" alt="">
+<img src="https://i.imgur.com/QKT06L0.png" alt=""></p>
+<p>Input the command :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-basic" data-lang="basic"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>python setup<span style="color:#f92672">.</span>py install
+</span></span></code></pre></div><hr>
+<h2 id="test-in-python"><code>Test in python</code></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> gurobipy <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span></code></pre></div><hr>
+<h2 id="reference"><code>Reference</code></h2>
+<p><a href="https://blog.csdn.net/weixin_41596280/article/details/89112302">如何在python中安装Gurobi（详细教程）_Book-bei的博客-CSDN博客_gurobi python</a></p>
+<p><a href="https://www.gurobi.com/documentation/9.1/quickstart_mac/cs_python.html">Python - gurobi</a></p>
+<p><a href="https://www.gurobi.com/documentation/9.1/quickstart_mac/the_optimization_model.html">The optimization model</a></p>
+<p><a href="https://www.gurobi.com/documentation/9.1/quickstart_mac/cs_simple_python_example.html">Simple Python Example</a></p>
+<p><a href="https://irradiated-drizzle-6f2.notion.site/How-to-install-gurobi-python-and-get-academic-licence-Windows-c69b9495af664dc4ae8f7dffdfaca163">My notion version</a></p>
 
         </div>
-        <div class="row">
-          <div class="col-lg-4 small-post-border">
-            <i class="ti-mobile h1 text-primary"></i>
-            <h5 class="font-weight-light my-3">Phone</h5>
-            09----
-          </div>
-          <div class="col-lg-4 small-post-border">
-            <i class="ti-email h1 text-primary"></i>
-            <h5 class="font-weight-light my-3">Email</h5>
-            hicbcb@email.com
-          </div>
-          <div class="col-lg-4 small-post-border">
-            <i class="ti-location-pin h1 text-primary"></i>
-            <h5 class="font-weight-light my-3">Location</h5>
-            Tainan, Taiwan
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-
-<section class="section-sm pb-0">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 text-center">
-        <h2 class="mb-4">Hi Write To Me</h2>
-        <form action="#" method="POST" class="row">
-          <div class="col-lg-6">
-            <input type="text" class="form-control mb-4" id="name" name="name" placeholder="Your Name">
-          </div>
-          <div class="col-lg-6">
-            <input type="email" class="form-control mb-4" id="email" name="email" placeholder="Your Email">
-          </div>
-          <div class="col-12">
-            <input type="text" class="form-control mb-4" id="subject" name="subject" placeholder="Subject">
-          </div>
-          <div class="col-12">
-            <textarea name="message" id="message" class="form-control mb-4" placeholder="Your Message"></textarea>
-          </div>
-          <div class="col-12">
-            <button type="submit" class="btn btn-primary">send message</button>
-          </div>
-        </form>
+        
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hicbcb" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
       </div>
     </div>
   </div>
